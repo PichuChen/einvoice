@@ -3,7 +3,7 @@
     "description": "Taiwan E-inboice PHP SDK",
     "license": "Apache-2.0",
     "version" : "0.0.0-alpha",
-    "keywords":["eibvoice"],
+    "keywords":["einvoice"],
     "authors": [
         {
             "name": "PichuChen",
