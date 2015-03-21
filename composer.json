@@ -1,9 +1,10 @@
 {
     "name": "pichuchen/einvoice",
-    "description": "Taiwan E-inboice PHP SDK",
+    "type": "library",
+    "description": "Taiwan E-invoice PHP SDK",
+    "keywords":["einvoice","E-Invoice","Taiwan","g0v.tw"],
     "license": "Apache-2.0",
-    "version" : "0.0.0-alpha",
-    "keywords":["einvoice"],
+    "version" : "1.0.0",
     "authors": [
         {
             "name": "PichuChen",
