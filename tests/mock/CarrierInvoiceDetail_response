@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Date: Sat, 14 Mar 2015 14:15:08 GMT
+Server: Apache
+Content-Length: 371
+X-Powered-By: Servlet/2.5 JSP/2.1
+Content-Type: text/html;charset=UTF-8
+
+{"v":"0.1","code":200,"msg":"執行成功","invNum":"LG27676622","sellerName":"高雄三","amount":70,"invStatus":"2","invPeriod":"10310","invDate":"20140904","details":[{"rowNum":1,"description":"KIRIN午後紅茶-奶茶PET500","quantity":"1","unitPrice":"45","amount":45},{"rowNum":2,"description":"起司火腿三明治","quantity":"1","unitPrice":"25","amount":25}]}

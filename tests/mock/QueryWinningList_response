@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Date: Sat, 14 Mar 2015 16:55:27 GMT
+Server: Apache
+Content-Length: 845
+X-Powered-By: Servlet/2.5 JSP/2.1
+Content-Type: text/html;charset=UTF-8
+
+{"fifthPrizeAmt":"0001000","firstPrizeAmt":"0200000","firstPrizeNo1":"91180939","firstPrizeNo10":"","firstPrizeNo2":"12753377","firstPrizeNo3":"22638178","firstPrizeNo4":"","firstPrizeNo5":"","firstPrizeNo6":"","firstPrizeNo7":"","firstPrizeNo8":"","firstPrizeNo9":"","fourthPrizeAmt":"0004000","invoYm":"10106","secondPrizeAmt":"0040000","sixthPrizeAmt":"0000200","sixthPrizeNo1":"258","sixthPrizeNo2":"066","sixthPrizeNo3":"","sixthPrizeNo4":"","sixthPrizeNo5":"","sixthPrizeNo6":"","spcPrizeAmt":"2000000","spcPrizeNo":"99028391","spcPrizeNo2":"","spcPrizeNo3":"","superPrizeAmt":"10000000","superPrizeNo":"29734661","thirdPrizeAmt":"0010000","timeStamp":{"date":26,"day":4,"hours":14,"minutes":33,"month":6,"seconds":14,"time":1343284394000,"timezoneOffset":-480,"year":112},"updateDate":"1010725","v":"0","code":"200","msg":"查詢成功"}

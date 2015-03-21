@@ -1,0 +1,24 @@
+{
+    "name": "pichuchen/einvoice",
+    "description": "Taiwan E-inboice PHP SDK",
+    "license": "Apache-2.0",
+    "version" : "0.0.0-alpha",
+    "keywords":["eibvoice"],
+    "authors": [
+        {
+            "name": "PichuChen",
+            "email": "Pichubaby@gmail.com",
+            "homepage": "http://pichuchen.tw"
+        }
+    ],
+    "autoload":{
+      "psr-4":{
+        "PichuChen\\einvoice\\": "src/"
+      }
+    },
+    "require": {
+      "php": ">=5.3.3",
+      "lib-curl": "*",
+      "guzzlehttp/guzzle": "~5.0"
+    }
+}
