@@ -18,7 +18,7 @@
 
 namespace PichuChen\einvoice;
 
-class InvoiceCheckResponseInvoiceItem {
+class InvoiceCheckResponseInvoiceItem implements \JsonSerializable  {
   private $rowNum;
   private $cardType;
   private $cardNo;
@@ -54,6 +54,24 @@ class InvoiceCheckResponseInvoiceItem {
   function getSellerName() {return $this->invoiceHeaderData->sellerName;}
   function getStatus() {return $this->invoiceHeaderData->invStatus;}
   function getPeriod() {return $this->invoiceHeaderData->invPeriod;}
+
+    function jsonSerialize(){
+        return [
+            "rowNum" => $this->getRowNum(),
+            "number" => $this->getNumber(),
+            "date" => $this->getDate(),
+            "sellerName" => $this->getSellerName(),
+            "period" => $this->getPeriod(),
+            "status" => $this->getStatus(),
+            "cardType" => $this->getCardType(),
+            "cardNo" => $this->getCardNo(),
+            "donatable" => $this->isDonatable(),
+            "donateMark" => $Cthis->getDonateMark(),
+            "amount" => $this->getAmount(),
+            "timezoneOffset" => $this->getInvoiceDateTimezoneOffset(),
+        ];
+    }
+  
 
 }
 
