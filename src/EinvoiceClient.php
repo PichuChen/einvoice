@@ -116,6 +116,8 @@ class EinvoiceClient {
   }
 
   public function carrierInvoiceCheck($data){
+    $endDate = new \DateTime('now');
+    $startDate = $endDate->sub(\DateInterval::createFromDateString('7 days'));
     $param = array(
       'version' => '0.2',
       'cardType' => isset($data['cardType']) ? $data['cardType'] : CardType::PHONEBARCODE,
@@ -123,9 +125,9 @@ class EinvoiceClient {
       'expTimeStamp' => isset($data['expTimeStamp']) ? $data['expTimeStamp'] : '2147483647',
       'action' => 'carrierInvChk',
       'timeStamp' => $this->getTimestamp(),
-      'startDate' => isset($data['startDate']) ? $data['startDate'] : '2012/07/01',
-      'endDate' => isset($data['endDate']) ? $data['endDate'] : '2012/07/31',
-      'onlyWinningInv' => isset($data['onlyWinningInv']) ? $data['onlyWinningInv'] : 'Y',
+      'startDate' => isset($data['startDate']) ? $data['startDate'] : $startDate->format('Y/m/d'),
+      'endDate' => isset($data['endDate']) ? $data['endDate'] : $endDate->format('Y/m/d'),
+      'onlyWinningInv' => isset($data['onlyWinningInv']) ? $data['onlyWinningInv'] : 'N',
       'uuid' => $this->uuid,
       'appID' => $this->appID,
       'cardEncrypt' => isset($data['cardEncrypt']) ? $data['cardEncrypt'] : ''
