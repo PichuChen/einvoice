@@ -37,7 +37,7 @@ class InvoiceCheckResponseInvoiceItem implements \JsonSerializable  {
     $this->amount = $data['amount'];
     $this->donateMark = $data['donateMark'];
     $this->invDateTimezoneOffset = $data['invDate']['timezoneOffset'];
-    $data['invDate'] = sprintf("%4d/%02d/%02d", (intval($data['invDate']['year']) + 1911), $data['invDate']['month'], $data['invDate']['day']);
+    $data['invDate'] = sprintf("%4d/%02d/%02d", (intval($data['invDate']['year']) + 1911), $data['invDate']['month'], $data['invDate']['date']);
     $this->invoiceHeaderData = new InvoiceHeaderData($data);
   }
 

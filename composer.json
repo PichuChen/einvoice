@@ -4,7 +4,7 @@
     "description": "Taiwan E-invoice PHP SDK",
     "keywords":["einvoice","E-Invoice","Taiwan","g0v.tw"],
     "license": "Apache-2.0",
-    "version" : "1.0.3",
+    "version" : "1.0.4",
     "authors": [
         {
             "name": "PichuChen",
