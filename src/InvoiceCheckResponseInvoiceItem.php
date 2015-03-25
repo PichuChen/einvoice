@@ -66,7 +66,7 @@ class InvoiceCheckResponseInvoiceItem implements \JsonSerializable  {
             "cardType" => $this->getCardType(),
             "cardNo" => $this->getCardNo(),
             "donatable" => $this->isDonatable(),
-            "donateMark" => $Cthis->getDonateMark(),
+            "donateMark" => $this->getDonateMark(),
             "amount" => $this->getAmount(),
             "timezoneOffset" => $this->getInvoiceDateTimezoneOffset(),
         ];
