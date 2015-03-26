@@ -18,7 +18,7 @@
 
 namespace PichuChen\einvoice;
 
-class InvoiceDetailItem{
+class InvoiceDetailItem implements \JsonSerializable {
   private $rowNum = '';
   private $description = '';
   private $quantity = '';
@@ -38,6 +38,22 @@ class InvoiceDetailItem{
   function getQuantity() {return $this->quantity;}
   function getUnitPrice() {return $this->unitPrice;}
   function getAmount() {return $this->amount;}
+
+    /**
+     *
+     * JsonSerialize
+     *
+     * @return array
+     */
+    function jsonSerialize(){
+        return [
+            "rowNum" => $this->getRowNum(),
+            "description" => $this->getDescription(),
+            "quantity" => $this->getQuantity(),
+            "unitPrice" => $this->getUnitPrice(),
+            "amount" => $this->getAmount()
+        ];
+    }
 
 };
 

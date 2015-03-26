@@ -50,7 +50,14 @@ class EinvoiceClient {
   public function mockGuzzle($mock){
     $this->client->getEmitter()->attach($mock);
   }
- 
+
+    /**
+     *
+     * Query Winning List
+     *
+     * @param Array $data invTerm: optional
+     * @return WinningList
+     */
   public function queryWinningList($data){
     $param['version'] = "0.2";
     $param['action']  = "QryWinningList";
@@ -63,6 +70,13 @@ class EinvoiceClient {
     return new WinningList(json_decode($result,true));
   }
 
+    /**
+     *
+     * QueryInvoiceHeader
+     *
+     * @param Array $data type: optinal, default: BARCODE; invNum: required; invDate: required;
+     * @return InvoiceHeader
+     */
   public function queryInvoiceHeader($data){
     $param = array(
       'version' => '0.2',
@@ -164,8 +178,15 @@ class EinvoiceClient {
     return time() + $this->timestampDelay;
   }
 
+    /**
+     *
+     * Build query param string from array
+     *
+     * @param $data
+     * @return string
+     */
   private function buildParam($data){
-    return http_build_query($data);
+    return urldecode(http_build_query($data));
 
   }
 

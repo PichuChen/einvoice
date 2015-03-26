@@ -21,7 +21,7 @@ use PichuChen\einvoice\ResponseStatus;
 use PichuChen\einvoice\InvoiceHeaderData;
 use PichuChen\einvoice\InvoiceDetailItem;
 
-class InvoiceDetail{
+class InvoiceDetail implements \JsonSerializable {
   protected $responseStatus;
   protected $invoiceHeaderData;
   private $details = [];
@@ -43,5 +43,23 @@ class InvoiceDetail{
   function getStatus() {return $this->invoiceHeaderData->invStatus;}
   function getPeriod() {return $this->invoiceHeaderData->invPeriod;}
   function getResponseStatus() {return $this->responseStatus;}
+
+    /**
+     *
+     * JsonSerialize
+     *
+     * @return array
+     */
+    function jsonSerialize(){
+        return [
+            "number" => $this->getNumber(),
+            "date" => $this->getDate(),
+            "sellerName" => $this->getSellerName(),
+            "status" => $this->getStatus(),
+            "period" => $this->getPeriod(),
+            "details" => $this->getDetails()
+        ];
+    }
+
 };
 
