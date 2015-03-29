@@ -19,7 +19,7 @@
 namespace PichuChen\einvoice;
 
 use GuzzleHttp\Client;
-use PichuChen\CardType;
+use PichuChen\einvoice\CardType;
 
 class EinvoiceClient {
 
