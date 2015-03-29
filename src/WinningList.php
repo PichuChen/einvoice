@@ -18,7 +18,7 @@
 
 namespace PichuChen\einvoice;
 
-class WinningList {
+class WinningList implements \JsonSerializable {
   private $response = "";
   private $responseStatus;
   function __construct($data){
@@ -28,6 +28,76 @@ class WinningList {
 
   function getSuperPrizeNo() { return $this->response['superPrizeNo'];}
   function getResponseStatus() { return $this->responseStatus;}
+
+/**
+     *
+     * JsonSerialize
+     *
+     * @return array
+     */
+    function jsonSerialize(){
+
+        $spcPrizeNoList = [];
+
+        foreach(['spcPrizeNo','spcPrizeNo2','spcPrizeNo3'] as $v){
+            if($this->response[$v] !== "") $spcPrizeNoList[] = $this->response[$v];
+        }
+
+        $firstPrizeNoList = [];
+
+        foreach(['firstPrizeNo1','firstPrizeNo2','firstPrizeNo3','firstPrizeNo4','firstPrizeNo5',
+                 'firstPrizeNo6','firstPrizeNo7','firstPrizeNo8','firstPrizeNo9','firstPrizeNo10'] as $v){
+            if($this->response[$v] !== "") $firstPrizeNoList[] = $this->response[$v];
+        }
+
+        $sixthPrizeNoList = [];
+
+        foreach(['sixthPrizeNo1','sixthPrizeNo2','sixthPrizeNo3','sixthPrizeNo4','sixthPrizeNo5',
+                    'sixthPrizeNo6'] as $v){
+            if($this->response[$v] !== "") $sixthPrizeNoList[] = $this->response[$v];
+        }
+
+        return [
+            'superPrizeAmt' => intval($this->response['superPrizeAmt']),
+            'firstPrizeAmt' => intval($this->response['firstPrizeAmt']),
+            'secondPrizeAmt' => intval($this->response['secondPrizeAmt']),
+            'thirdPrizeAmt' => intval($this->response['thirdPrizeAmt']),
+            'fourthPrizeAmt' => intval($this->response['fourthPrizeAmt']),
+            'fifthPrizeAmt' => intval($this->response['fifthPrizeAmt']),
+            'sixthPrizeAmt' => intval($this->response['sixthPrizeAmt']),
+
+            'spcPrizeNo' => ($this->response['spcPrizeNo']),
+            'spcPrizeNo1' => ($this->response['spcPrizeNo']),
+            'spcPrizeNo2' => ($this->response['spcPrizeNo2']),
+            'spcPrizeNo3' => ($this->response['spcPrizeNo3']),
+
+            'firstPrizeNo1' => ($this->response['firstPrizeNo1']),
+            'firstPrizeNo2' => ($this->response['firstPrizeNo2']),
+            'firstPrizeNo3' => ($this->response['firstPrizeNo3']),
+            'firstPrizeNo4' => ($this->response['firstPrizeNo4']),
+            'firstPrizeNo5' => ($this->response['firstPrizeNo5']),
+            'firstPrizeNo6' => ($this->response['firstPrizeNo6']),
+            'firstPrizeNo7' => ($this->response['firstPrizeNo7']),
+            'firstPrizeNo8' => ($this->response['firstPrizeNo8']),
+            'firstPrizeNo9' => ($this->response['firstPrizeNo9']),
+            'firstPrizeNo10' => ($this->response['firstPrizeNo10']),
+            
+            'sixthPrizeNo1' => ($this->response['sixthPrizeNo1']),
+            'sixthPrizeNo2' => ($this->response['sixthPrizeNo2']),
+            'sixthPrizeNo3' => ($this->response['sixthPrizeNo3']),
+            'sixthPrizeNo4' => ($this->response['sixthPrizeNo4']),
+            'sixthPrizeNo5' => ($this->response['sixthPrizeNo5']),
+            'sixthPrizeNo6' => ($this->response['sixthPrizeNo6']),
+
+            'spcPrizeNoList' => $spcPrizeNoList,
+            'firstPrizeNoList' => $firstPrizeNoList,
+            'sixthPrizeNoList' => $sixthPrizeNoList,
+
+            'invoYm' => $this->response['invoYm'],
+            'updateDate' => $this->response['updateDate'],
+
+        ];
+    }
 
   function __call($name = "", array $arguments){
     $request = substr($name,3);
