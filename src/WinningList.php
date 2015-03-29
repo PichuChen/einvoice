@@ -29,13 +29,20 @@ class WinningList implements \JsonSerializable {
   function getSuperPrizeNo() { return $this->response['superPrizeNo'];}
   function getResponseStatus() { return $this->responseStatus;}
 
-/**
+
+    /**
      *
      * JsonSerialize
      *
      * @return array
      */
     function jsonSerialize(){
+
+        $superPrizeNoList = [];
+
+        foreach(['superPrizeNo'] as $v){
+            if($this->response[$v] !== "") $superPrizeNoList[] = $this->response[$v];
+        }
 
         $spcPrizeNoList = [];
 
@@ -66,6 +73,8 @@ class WinningList implements \JsonSerializable {
             'fifthPrizeAmt' => intval($this->response['fifthPrizeAmt']),
             'sixthPrizeAmt' => intval($this->response['sixthPrizeAmt']),
 
+            'superPrizeNo' => $this->response['superPrizeNo'],
+
             'spcPrizeNo' => ($this->response['spcPrizeNo']),
             'spcPrizeNo1' => ($this->response['spcPrizeNo']),
             'spcPrizeNo2' => ($this->response['spcPrizeNo2']),
@@ -89,6 +98,7 @@ class WinningList implements \JsonSerializable {
             'sixthPrizeNo5' => ($this->response['sixthPrizeNo5']),
             'sixthPrizeNo6' => ($this->response['sixthPrizeNo6']),
 
+            'superPrizeNoList' => $superPrizeNoList,
             'spcPrizeNoList' => $spcPrizeNoList,
             'firstPrizeNoList' => $firstPrizeNoList,
             'sixthPrizeNoList' => $sixthPrizeNoList,
