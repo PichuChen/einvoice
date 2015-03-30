@@ -18,7 +18,7 @@
 
 namespace PichuChen\einvoice;
 
-class InvoiceHeader{
+class InvoiceHeader implements \JsonSerializable {
   protected $responseStatus;
   protected $invoiceHeaderData;
 
@@ -35,6 +35,21 @@ class InvoiceHeader{
   function getPeriod() {return $this->invoiceHeaderData->invPeriod;}
   function getResponseStatus() {return $this->responseStatus;}
 
-
+ /**
+     *
+     * JsonSerialize
+     *
+     * @return array
+     */
+    function jsonSerialize(){
+        return [
+            "number" => $this->getNumber(),
+            "date" => $this->getDate(),
+            "sellerName" => $this->getSellerName(),
+            "status" => $this->getStatus(),
+            "period" => $this->getPeriod(),
+            "details" => $this->getDetails()
+        ];
+    }
 }
 
