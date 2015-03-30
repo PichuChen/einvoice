@@ -48,7 +48,6 @@ class InvoiceHeader implements \JsonSerializable {
             "sellerName" => $this->getSellerName(),
             "status" => $this->getStatus(),
             "period" => $this->getPeriod(),
-            "details" => $this->getDetails()
         ];
     }
 }
