@@ -23,7 +23,7 @@ use PichuChen\einvoice\EinvoiceClient;
 use GuzzleHttp\Subscriber\Mock;
 
 
-class EinvoiceClientTest extends \PHPUnit_Framework_TestCase {
+class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
 
   var $testingUUID = '28c7fb82-bd5d-46cc-a814-b2a92310f72e';
 //  var $appID = 'EINV3201402316654'; // Fack ID

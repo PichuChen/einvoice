@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use PichuChen\Einvoice\SocialWelfareList;
 //use PichuChen\Einvoice\InvoiceDateItem;
 
-class SocialWelfareListTest extends \PHPUnit_Framework_TestCase {
+class SocialWelfareListTest extends \PHPUnit\Framework\TestCase {
 
   var $mockFile = 'tests/mock/SocialWelfareList_response';
 

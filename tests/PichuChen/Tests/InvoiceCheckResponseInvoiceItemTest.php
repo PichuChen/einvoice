@@ -21,7 +21,7 @@ use GuzzleHttp\Subscriber\Mock;
 use PichuChen\Einvoice\InvoiceCheckResponseInvoiceItem;
 use PichuChen\Einvoice\CardType;
 
-class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit_Framework_TestCase {
+class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
 
   function testGetRow(){
     $response = new InvoiceCheckResponseInvoiceItem(

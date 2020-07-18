@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use PichuChen\Einvoice\ResponseStatus;
 //use PichuChen\Einvoice\InvoiceDateItem;
 
-class ResponseStatusTest extends \PHPUnit_Framework_TestCase {
+class ResponseStatusTest extends \PHPUnit\Framework\TestCase {
 
   var $mockFile = 'tests/mock/InvoiceHeader_response';
 

@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use PichuChen\Einvoice\WinningList;
 //use PichuChen\Einvoice\InvoiceDateItem;
 
-class WinningListTest extends \PHPUnit_Framework_TestCase {
+class WinningListTest extends \PHPUnit\Framework\TestCase {
 
   var $mockFile = 'tests/mock/WinningList_response';
 

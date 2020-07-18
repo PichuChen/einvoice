@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use PichuChen\Einvoice\InvoiceHeaderData;
 //use PichuChen\Einvoice\InvoiceDateItem;
 
-class InvoiceHeaderDataTest extends \PHPUnit_Framework_TestCase {
+class InvoiceHeaderDataTest extends \PHPUnit\Framework\TestCase {
 
   var $mockFile = 'tests/mock/InvoiceHeaderData_response';
   function testConstructor(){

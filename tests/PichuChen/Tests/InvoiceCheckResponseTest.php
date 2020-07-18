@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use GuzzleHttp\Subscriber\Mock;
 use PichuChen\Einvoice\InvoiceCheckResponse;
 
-class InvoiceCheckResponseTest extends \PHPUnit_Framework_TestCase {
+class InvoiceCheckResponseTest extends \PHPUnit\Framework\TestCase {
 
 
   function testIsOnlyWinningInv(){

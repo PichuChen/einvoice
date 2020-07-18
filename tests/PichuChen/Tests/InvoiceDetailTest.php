@@ -20,7 +20,7 @@ namespace PichuChen\Tests\Einvoice;
 use PichuChen\Einvoice\InvoiceDetailItem;
 //use PichuChen\Einvoice\InvoiceDateItem;
 
-class InvoiceDetailItemTest extends \PHPUnit_Framework_TestCase {
+class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
 
   var $mockFile = 'tests/mock/InvoiceDetailItem_response';
 
