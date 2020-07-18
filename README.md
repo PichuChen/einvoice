@@ -32,7 +32,7 @@ PHP SDK of Taiwan E-Invoice API
 
     $client = \PichuChen\einvoice\EinvoiceClient::factory([
         'uuid' => 'CLIENT_UUID',
-        'appID' => 'API_KEY
+        'appID' => 'API_KEY'
     ]);
 
 生成`EinvoiceClient`實體。
