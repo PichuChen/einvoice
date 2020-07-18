@@ -24,6 +24,7 @@ class CardType{
   const CDC_BARCODE   = "CQ0001"; // 自然人憑證條碼
   const EI            = "EJ0011"; // 鯨躍發票卡
   const TIH_MEMBER    = "EJ1507"; // 台灣智慧家庭會員
+  const ECPAY         = "EM0009"; // 綠界科技
 
   static function customCardType($code) {
   	return $code;
