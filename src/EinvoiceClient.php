@@ -23,7 +23,7 @@ use PichuChen\einvoice\CardType;
 
 class EinvoiceClient {
 
-  const endpoint = 'https://www.einvoice.nat.gov.tw';
+  const endpoint = 'https://api.einvoice.nat.gov.tw';
   var $timestampDelay = 180; // 180s
   var $uuid = "";
   var $appID = ""; 
@@ -191,7 +191,7 @@ class EinvoiceClient {
   }
 
   private function doRequest($input){
-      $response = $this->client->get($input, ['verify' => false]);
+      $response = $this->client->post($input, ['verify' => true]);
       return $response->getBody();
 //    return shell_exec("curl -ks '".$input."'");
   }
