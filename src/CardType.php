@@ -22,6 +22,7 @@ class CardType{
   const EASYCARD      = "1K0001"; // 悠遊卡
   const ICASH         = "2G0001"; // icash (Deprecated?)
   const CDC_BARCODE   = "CQ0001"; // 自然人憑證條碼
+  const EI            = "EJ0011"; // 鯨躍發票卡
   const TIH_MEMBER    = "EJ1507"; // 台灣智慧家庭會員
 
   static function customCardType($code) {
