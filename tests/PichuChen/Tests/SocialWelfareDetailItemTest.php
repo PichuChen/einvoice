@@ -36,7 +36,7 @@ class SocialWelfareDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getLoveCode();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
   
   function testGetSocialWelfareBAN(){
@@ -44,7 +44,7 @@ class SocialWelfareDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getSocialWelfareBAN();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetSocialWelfareName(){
@@ -52,7 +52,7 @@ class SocialWelfareDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getSocialWelfareName();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetSocialWelfareAbbrev(){
@@ -60,7 +60,7 @@ class SocialWelfareDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getSocialWelfareAbbrev();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
 }

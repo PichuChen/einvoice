@@ -36,7 +36,7 @@ class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getDescription();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
   
   function testGetQuantity(){
@@ -44,7 +44,7 @@ class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getDescription();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetUnitPrice(){
@@ -52,7 +52,7 @@ class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getUnitPrice();
-    $this->assertInternalType('float',$actual);
+    $this->assertIsFloat($actual);
   }
 
   function testGetAmount(){
@@ -60,7 +60,7 @@ class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getAmount();
-    $this->assertInternalType('integer',$actual);
+    $this->assertIsInt($actual);
   }
 
 }

@@ -36,7 +36,7 @@ class InvoiceHeaderTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getSellerName();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
   
   function testGetStatus(){
@@ -44,7 +44,7 @@ class InvoiceHeaderTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getStatus();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetPeriod(){
@@ -52,7 +52,7 @@ class InvoiceHeaderTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getPeriod();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetResponseStatus(){

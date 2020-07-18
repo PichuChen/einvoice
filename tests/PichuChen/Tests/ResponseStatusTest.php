@@ -44,7 +44,7 @@ class ResponseStatusTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getMessage();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
 }

@@ -41,7 +41,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
     $response = new InvoiceCheckResponseInvoiceItem(
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
-    $this->assertInternalType('string',$response->getCardNo());
+    $this->assertIsString($response->getCardNo());
   }  
 
   function testIsDonatable(){
@@ -56,7 +56,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getAmount();
-    $this->assertInternalType('integer',$actual);
+    $this->assertIsInt($actual);
     $this->assertEquals(72,$actual);
   }
 
@@ -65,7 +65,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getDonateMark();
-    $this->assertInternalType('boolean',$actual);
+    $this->assertIsBool($actual);
     $this->assertEquals(false,$actual);
   }
 
@@ -82,7 +82,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getNumber();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('LN68533163',$actual);
   } 
 
@@ -91,7 +91,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getDate();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('2014/09/01',$actual);
   }
 
@@ -100,7 +100,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getSellerName();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('高雄西灣門市部',$actual);
   }
 
@@ -109,7 +109,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getStatus();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetPeriod(){
@@ -117,7 +117,7 @@ class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents('tests/mock/InvoiceCheckResponseInvoiceItem_response'),true)
     );
     $actual = $response->getPeriod();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('10310',$actual);
   }
 

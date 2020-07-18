@@ -13,7 +13,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
     $response = new InvoiceDetail(
       json_decode(file_get_contents($this->mockFile),true)
     );
-    $this->assertInternalType('array',$response->getDetails());
+    $this->assertIsArray($response->getDetails());
     $this->assertInstanceOf('PichuChen\\einvoice\\InvoiceDetailItem',$response->getDetails()[0]);
   }
 
@@ -22,7 +22,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getNumber();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('TB65188703',$actual);
   }
 
@@ -31,7 +31,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getDate();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('2015/02/26',$actual);
   }
 
@@ -40,7 +40,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getSellerName();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('興北',$actual);
   }
 
@@ -49,7 +49,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getStatus();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
   }
 
   function testGetPeriod(){
@@ -57,7 +57,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getPeriod();
-    $this->assertInternalType('string',$actual);
+    $this->assertIsString($actual);
     $this->assertEquals('10402',$actual);
   }
 

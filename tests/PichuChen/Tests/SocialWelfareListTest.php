@@ -37,7 +37,7 @@ class SocialWelfareListTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getDetails();
-    $this->assertInternalType('array',$actual); 
+    $this->assertIsArray($actual); 
   }
 
 }
