@@ -18,9 +18,18 @@
 namespace PichuChen\einvoice;
 
 class CardType{
-  const PHONEBARCODE = "3J0002";
-  const EASYCARD     = "1K0001";
-  const ICASH        = "2G0001";
+  const PHONE_BARCODE = "3J0002"; // 手機條碼
+  const EASYCARD      = "1K0001"; // 悠遊卡
+  const ICASH         = "2G0001"; // icash (Deprecated?)
+  const CDC_BARCODE   = "CQ0001"; // 自然人憑證條碼
+  const TIH_MEMBER    = "EJ1507"; // 台灣智慧家庭會員
+
+  static function customCardType($code) {
+  	return $code;
+  }
+
+
+
 };
 
 
