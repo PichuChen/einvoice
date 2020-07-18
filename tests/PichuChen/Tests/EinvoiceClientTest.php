@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
 use PichuChen\einvoice\CardType;
 use PichuChen\einvoice\CodeType;

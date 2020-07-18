@@ -1,9 +1,9 @@
 <?php 
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
-use PichuChen\Einvoice\InvoiceDetail;
-//use PichuChen\Einvoice\InvoiceDateItem;
+use PichuChen\einvoice\InvoiceDetail;
+//use PichuChen\einvoice\InvoiceDateItem;
 
 class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
 
@@ -14,7 +14,7 @@ class InvoiceDetailTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $this->assertInternalType('array',$response->getDetails());
-    $this->assertInstanceOf('PichuChen\\Einvoice\\InvoiceDetailItem',$response->getDetails()[0]);
+    $this->assertInstanceOf('PichuChen\\einvoice\\InvoiceDetailItem',$response->getDetails()[0]);
   }
 
   function testGetNumber(){

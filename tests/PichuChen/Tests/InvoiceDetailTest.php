@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
-use PichuChen\Einvoice\InvoiceDetailItem;
-//use PichuChen\Einvoice\InvoiceDateItem;
+use PichuChen\einvoice\InvoiceDetailItem;
+//use PichuChen\einvoice\InvoiceDateItem;
 
 class InvoiceDetailItemTest extends \PHPUnit\Framework\TestCase {
 

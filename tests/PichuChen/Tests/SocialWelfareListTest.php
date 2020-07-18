@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
-use PichuChen\Einvoice\SocialWelfareList;
-//use PichuChen\Einvoice\InvoiceDateItem;
+use PichuChen\einvoice\SocialWelfareList;
+//use PichuChen\einvoice\InvoiceDateItem;
 
 class SocialWelfareListTest extends \PHPUnit\Framework\TestCase {
 
@@ -29,7 +29,7 @@ class SocialWelfareListTest extends \PHPUnit\Framework\TestCase {
       json_decode(file_get_contents($this->mockFile),true)
     );
     $actual = $response->getResponseStatus();
-    $this->assertInstanceOf('PichuChen\\Einvoice\\ResponseStatus',$actual);
+    $this->assertInstanceOf('PichuChen\\einvoice\\ResponseStatus',$actual);
   }
 
   function testGetDetails(){

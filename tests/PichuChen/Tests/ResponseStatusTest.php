@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
-use PichuChen\Einvoice\ResponseStatus;
-//use PichuChen\Einvoice\InvoiceDateItem;
+use PichuChen\einvoice\ResponseStatus;
+//use PichuChen\einvoice\InvoiceDateItem;
 
 class ResponseStatusTest extends \PHPUnit\Framework\TestCase {
 

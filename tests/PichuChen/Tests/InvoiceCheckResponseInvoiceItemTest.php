@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
 use GuzzleHttp\Subscriber\Mock;
-use PichuChen\Einvoice\InvoiceCheckResponseInvoiceItem;
-use PichuChen\Einvoice\CardType;
+use PichuChen\einvoice\InvoiceCheckResponseInvoiceItem;
+use PichuChen\einvoice\CardType;
 
 class InvoiceCheckResponsInvoiceItemTest extends \PHPUnit\Framework\TestCase {
 

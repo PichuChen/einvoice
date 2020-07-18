@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
 use GuzzleHttp\Subscriber\Mock;
-use PichuChen\Einvoice\InvoiceCheckResponse;
+use PichuChen\einvoice\InvoiceCheckResponse;
 
 class InvoiceCheckResponseTest extends \PHPUnit\Framework\TestCase {
 
@@ -36,12 +36,12 @@ class InvoiceCheckResponseTest extends \PHPUnit\Framework\TestCase {
   function testGetDetails() {
     $response = new InvoiceCheckResponse(json_decode(file_get_contents('tests/mock/InvoiceCheckResponse_response'),true));
     $this->assertInternalType('array',$response->getDetails());
-    $this->assertInstanceOf('PichuChen\\Einvoice\\InvoiceCheckResponseInvoiceItem',$response->getDetails()[0]);
+    $this->assertInstanceOf('PichuChen\\einvoice\\InvoiceCheckResponseInvoiceItem',$response->getDetails()[0]);
   }
 
   function getResponseStatus() {
     $response = new InvoiceCheckResponse(json_decode(file_get_contents('tests/mock/InvoiceCheckResponse_response'),true));
-    $this->assertInstanceOf('PichuChen\\Einvoice\\ResponseStatus',$response->getResponse());
+    $this->assertInstanceOf('PichuChen\\einvoice\\ResponseStatus',$response->getResponse());
   }
 
 }

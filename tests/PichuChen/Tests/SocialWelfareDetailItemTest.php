@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace PichuChen\Tests\Einvoice;
+namespace PichuChen\Tests\einvoice;
 
-use PichuChen\Einvoice\SocialWelfareDetailItem;
-//use PichuChen\Einvoice\InvoiceDateItem;
+use PichuChen\einvoice\SocialWelfareDetailItem;
+//use PichuChen\einvoice\InvoiceDateItem;
 
 class SocialWelfareDetailItemTest extends \PHPUnit\Framework\TestCase {
 
