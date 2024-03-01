@@ -5,7 +5,7 @@ PHP SDK of Taiwan E-Invoice API
 ## 基本需求
 
 ### 電子發票API
-使用前請先向「財政部電子發票整合服務平台」申請「電子發票API」(https://www.einvoice.nat.gov.tw/APMEMBERVAN/APIService/Registration?CSRT=15916142259000470854)
+使用前請先向「財政部電子發票整合服務平台」申請「電子發票API」(https://www.gov.tw/News3_Content.aspx?n=2&s=508285)
 
 ### Composer
 此Library 使用Comporser進行安裝，在專案目錄下的`composer.json`新增
