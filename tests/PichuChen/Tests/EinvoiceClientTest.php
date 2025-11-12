@@ -20,7 +20,9 @@ namespace PichuChen\Tests\einvoice;
 use PichuChen\einvoice\CardType;
 use PichuChen\einvoice\CodeType;
 use PichuChen\einvoice\EinvoiceClient;
-use GuzzleHttp\Subscriber\Mock;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Message;
 
 
 class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
@@ -65,9 +67,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testQueryWinningList(){
-    $mock = new Mock(['tests/mock/QueryWinningList_response']);
+    $raw = file_get_contents('tests/mock/QueryWinningList_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient();
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->queryWinningList([
       'invTerm' => '10106'
     ]);
@@ -75,9 +78,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testQueryInvoiceHeader(){
-    $mock = new Mock(['tests/mock/QueryInvoiceHeader_response']);
+    $raw = file_get_contents('tests/mock/QueryInvoiceHeader_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient();
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->queryInvoiceHeader([
       'type'=>CodeType::BARCODE,
       'invNum' => 'TB65188703',
@@ -87,9 +91,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testQueryInvoiceDetail(){
-    $mock = new Mock(['tests/mock/QueryInvoiceDetail_response']);
+    $raw = file_get_contents('tests/mock/QueryInvoiceDetail_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient();
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->queryInvoiceDetail([
       'type' => CodeType::BARCODE,
       'invNum' => 'TB65188703',
@@ -102,9 +107,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testQueryLoveCode(){
-    $mock = new Mock(['tests/mock/QueryLoveCode_response']);
+    $raw = file_get_contents('tests/mock/QueryLoveCode_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient();
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->queryLoveCode();
 
     $this->assertInstanceOf('PichuChen\Einvoice\SocialWelfareList',$result);
@@ -112,9 +118,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testCarrierInvoiceCheck(){
-    $mock = new Mock(['tests/mock/CarrierInvoiceCheck_response']);
+    $raw = file_get_contents('tests/mock/CarrierInvoiceCheck_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient();
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->carrierInvoiceCheck([
      'cardType' => CardType::EASYCARD,
      'cardNo' => '4051212345',
@@ -129,9 +136,10 @@ class EinvoiceClientTest extends \PHPUnit\Framework\TestCase {
   }
 
   function testCarrierInvoiceDetail(){
-    $mock = new Mock(['tests/mock/CarrierInvoiceDetail_response']); 
+    $raw = file_get_contents('tests/mock/CarrierInvoiceDetail_response');
+    $resp = Message::parseResponse($raw);
     $EinvoiceClient = $this->buildClient(); 
-    $EinvoiceClient->mockGuzzle($mock);
+    $EinvoiceClient->mockGuzzleResponses([$resp]);
     $result = $EinvoiceClient->carrierInvoiceDetail([
       'cardType' => CardType::EASYCARD,
       'cardNo' => '405112345',

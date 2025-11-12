@@ -19,6 +19,8 @@
 namespace PichuChen\einvoice;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use PichuChen\einvoice\CardType;
 
 class EinvoiceClient {
@@ -48,7 +50,21 @@ class EinvoiceClient {
   }
 
   public function mockGuzzle($mock){
-    $this->client->getEmitter()->attach($mock);
+    // Deprecated: Guzzle 7 removed the event emitter. This method is kept for BC but does nothing.
+    // Use mockGuzzleResponses(array $responses) instead.
+    return;
+  }
+
+  /**
+   * Inject mock responses using Guzzle 7 MockHandler for testing.
+   *
+   * @param array $responses Array of \Psr\Http\Message\ResponseInterface
+   * @return void
+   */
+  public function mockGuzzleResponses(array $responses){
+    $mock = new MockHandler($responses);
+    $handlerStack = HandlerStack::create($mock);
+    $this->client = new Client(['handler' => $handlerStack]);
   }
 
     /**
@@ -192,7 +208,7 @@ class EinvoiceClient {
 
   private function doRequest($input){
       $response = $this->client->post($input, ['verify' => true]);
-      return $response->getBody();
+      return (string) $response->getBody();
 //    return shell_exec("curl -ks '".$input."'");
   }
 
